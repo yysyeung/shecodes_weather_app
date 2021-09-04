@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="🔍"
+                class="form-control"
+                id="search-submit"
+              />
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current Location
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <h1 id="city"></h1>
+        <ul>
+          <li id="date"></li>
+          <li id="description"></li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix">
+              <div class="float-left">
+                <span class="temperature" id="temperature"></span
+                ><span class="units">℃</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Precipitation: 3%</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span>km/h</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="forecast">5 days forecast</p>
+        <div class="future-forecast">
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Wed</h5>
+                    <p class="card-text">Date</p>
+                    <p class="card-pic">☀️</p>
+                    <p class="card-text">18℃ / <br />12℃</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Thurs</h5>
+                    <p class="card-text">Date</p>
+                    <p class="card-pic">🌧</p>
+                    <p class="card-text">20℃ / <br />12℃</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Fri</h5>
+                    <p class="card-text">Date</p>
+                    <p class="card-pic">🌤</p>
+                    <p class="card-text">19℃ / <br />10℃</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Sat</h5>
+                    <p class="card-text">Date</p>
+                    <p class="card-pic">☀️</p>
+                    <p class="card-text">24℃ / <br />12℃</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Sun</h5>
+                    <p class="card-text">Date</p>
+                    <p class="card-pic">🌤</p>
+                    <p class="card-text">16℃ / <br />12℃</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
